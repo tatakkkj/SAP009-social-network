@@ -39,3 +39,16 @@
     gap: 10px;
     align-items: center;
 }
+
+.container__login__form__input {
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.container__login__form__input:focus {
+    border: 3px solid #000000;
+}
+  
+.container__login__form__button {
+
+}

@@ -10,13 +10,13 @@ export default () => {
       <h2 class='container__login__info__subtitle'>Dedicado a tutores e apoiadores da causa animal</h2> 
     </div>
     <form class='container__login__form'>
-      <input type='email' class='input login' id='email' placeholder='seu@email.com' />
+      <input type='email' class='container__login__form__input' id='email' placeholder='seu@email.com' />
       <div id='email-error-message'></div>
-      <input type='password' class='input senha' id='password' placeholder='senha' />
+      <input type='password' class='container__login__form__input' id='password' placeholder='senha' />
       <div id='password-error-message'></div>
-      <button type='button' id='recover-password-button'>Recuperar senha</button>
-      <button type='button' id='loginbutton'>Entrar</button>
-      <button type='button' id='registerbutton'>Registrar</button>
+      <button type='button' class='container__login__form__button' id='recover-password-button'>Recuperar senha</button>
+      <button type='button' class='container__login__form__button' id='loginbutton'>Entrar</button>
+      <button type='button' class='container__login__form__button' id='registerbutton'>Registrar</button>
     </form>
   
     `;
@@ -25,12 +25,19 @@ export default () => {
 
   const email = container.querySelector('#email');
   const password = container.querySelector('#password');
-  const recoverPassword = container.querySelector('#recover-password-button');
+  const registerButton = container.querySelector('#registerbutton');
   const loginButton = container.querySelector('#loginbutton');
 
+  function createUser(e){
+    console.log('entroucreateuser');
+  }
+
+  registerButton.addEventListener('click', createUser);
+
   function login(e) {
+    console.log("entrou")
     e.preventDefault();
-    return signIn(email.value, password.value);
+    signIn(email.value, password.value);
   }
 
   loginButton.addEventListener('click', login);
@@ -101,20 +108,15 @@ export default () => {
   // }
 
   
-    // firebase.auth().singInWithEmailAndPassoword(
-    //   form.email().value, form.password().value
-    // ).then(response => {
-    //   console.log('entrou')
-    // }).catch(error => {
-    //   console.log('nao entrou')
-    // })
+  // firebase.auth().singInWithEmailAndPassoword(
+  //   form.email().value, form.password().value
+  // ).then(response => {
+  //   console.log('entrou')
+  // }).catch(error => {
+  //   console.log('nao entrou')
+  // })
   
   // form.email().onchange = onChangeEmail();
   // form.password().onchange = onChangePassword();
-
-  
- 
-
-
   return container;
 };
