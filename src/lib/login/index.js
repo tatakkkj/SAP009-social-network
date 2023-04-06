@@ -1,122 +1,41 @@
-import { signIn } from '../firebase.js';
-
 export default () => {
-  const container = document.createElement('main');
-  container.id = 'container__login';
-
+  const container = document.createElement('div');
   const template = `
-    <div class='container__login__info'>
-      <h1 class='container__login__info__title'>Petzone</h1>
-      <h2 class='container__login__info__subtitle'>Dedicado a tutores e apoiadores da causa animal</h2> 
+    <section class='box-text-img'>
+    <div class='box-01'>
+    <h1 class="logo-geral logo1">PetZone</h1>
+    <div class="paragrafo">
+    <p>A PetZone é uma rede social dedicada a você, tutor e apoiador das causas animais.</p>
+    <p><strong>Já está cadastrado? Faça o login!</strong></p>
+    </div> 
+    <div class='img-register'>
+    <img src='./img/logo2.png' alt='img-logo2' class='img-logo2'>
     </div>
-    <form class='container__login__form'>
-      <input type='email' class='container__login__form__input' id='email' placeholder='seu@email.com' />
-      <div id='email-error-message'></div>
-      <input type='password' class='container__login__form__input' id='password' placeholder='senha' />
-      <div id='password-error-message'></div>
-      <button type='button' class='container__login__form__button' id='recover-password-button'>Recuperar senha</button>
-      <button type='button' class='container__login__form__button' id='loginbutton'>Entrar</button>
-      <button type='button' class='container__login__form__button' id='registerbutton'>Registrar</button>
-    </form>
-  
+    </div>
+    <section class='box-register'>
+    <form class='section-register'>
+      <h2 class='subtitle-register'>LOGIN</h2>
+      <input type='text' placeholder='Usuário:' id='name'>
+      <input type='password' placeholder='Senha:' id='password'> 
+      <div class="form-group">
+      <button type="submit" class="btn-feed">LOGIN</button>
+      <p class='text-box-register'>Acesse com o Google<p>
+      <div class='logo-google'>
+      <img src='./img/googlelogo.png' alt='logo-google'>
+      </div>
+      <hr>
+      <p class='text-box-register'>Ainda não tem conta?<p>
+      <button type="submit" class="btn-cadastro">CADASTRE-SE</button>
+      </div>
+    </form> 
+    </section>
+    </section>  
     `;
 
   container.innerHTML = template;
-
-  const email = container.querySelector('#email');
-  const password = container.querySelector('#password');
-  const registerButton = container.querySelector('#registerbutton');
-  const loginButton = container.querySelector('#loginbutton');
-
-  function createUser(e){
-    console.log('entroucreateuser');
-  }
-
-  registerButton.addEventListener('click', createUser);
-
-  function login(e) {
-    console.log("entrou")
-    e.preventDefault();
-    signIn(email.value, password.value);
-  }
-
-  loginButton.addEventListener('click', login);
-
-
-  // function validateEmail(email) {
-  // return /\S+@\S+\.\S+/.test(email);
-  // }
-
-  // function isEmailValid() {
-  // const email = form.email().value;
-  // if (!email) {
-  // return false;
-  // }
-  // return validateEmail(email);
-  // }
-
-  // function isPasswordValid() {
-  // const password = form.password().value;
-  // if (!password) {
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
-  // function toggleButtonsDisable() {
-  //   const emailValid = isEmailValid();
-  //   form.recoverPassword().disabled = !emailValid;
-
-  //   const passwordValid = isPasswordValid();
-  //   form.loginButton().disabled = !emailValid || !passwordValid;
-  // }
-
-  // function toggleEmailErrors() {
-  //   const email = form.email().value;
-  //   const showError = document.querySelector('#email-error-message');
-  //   if (!email) {
-  //     showError.innerHTML = 'Email é obrigatório';
-  //   } else {
-  //     showError.innerHTML = '';
-  //   }
-
-  //   if (validateEmail(email)) {
-  //     showError.innerHTML = '';
-  //   } else {
-  //     showError.innerHTML = 'Digite um email válido';
-  //   }
-  // }
-
-  // function togglePasswordErrors() {
-  //   const password = form.password().value;
-  //   const showError = document.querySelector('#password-error-message');
-  //   if (!password) {
-  //     showError.innerHTML = 'Senha é obrigatória';
-  //   } else {
-  //     showError.innerHTML = '';
-  //   }
-  // }
-
-  // function onChangeEmail() {
-  //   toggleButtonsDisable();
-  //   toggleEmailErrors();
-  // }
-
-  // function onChangePassword() {
-  //   toggleButtonsDisable();
-  //   togglePasswordErrors();
-  // }
-
-  
-  // firebase.auth().singInWithEmailAndPassoword(
-  //   form.email().value, form.password().value
-  // ).then(response => {
-  //   console.log('entrou')
-  // }).catch(error => {
-  //   console.log('nao entrou')
-  // })
-  
-  // form.email().onchange = onChangeEmail();
-  // form.password().onchange = onChangePassword();
+  const btnLogin = container.querySelector('.btn-feed');
+  btnLogin.addEventListener('click', () => {
+    window.location.hash = '#register';
+  });
   return container;
 };
