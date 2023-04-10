@@ -28,7 +28,6 @@ const init = () => {
     verifyHash();
   });
 };
-
 window.addEventListener('load', () => {
   verifyHash();
   init();

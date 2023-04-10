@@ -1,9 +1,5 @@
-import { signIn } from '../firebase.js';
-
 export default () => {
-  const container = document.createElement('main');
-  container.id = 'container__login';
-
+  const container = document.createElement('div');
   const template = `
     <div class='container__login__info'>
       <img src='./lib/assets/logo1.png' alt='logo' />
