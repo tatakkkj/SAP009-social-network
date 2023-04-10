@@ -9,7 +9,7 @@ export default () => {
     <p><strong>Já está cadastrado? Faça o login!</strong></p>
     </div> 
     <div class='img-register'>
-    <img src='./img/logo2.png' alt='img-logo2' class='img-logo2'>
+    <img src='./img/logo2.png' alt='logo2' width="auto" height="auto">
     </div>
     </div>
     <section class='box-register'>
@@ -21,7 +21,7 @@ export default () => {
       <button type="submit" class="btn-feed">LOGIN</button>
       <p class='text-box-register'>Acesse com o Google<p>
       <div class='logo-google'>
-      <img src='./img/googlelogo.png' alt='logo-google'>
+      <img src="./img/googlelogo.png" alt="logo-google" width="auto" height="auto">
       </div>
       <hr>
       <p class='text-box-register'>Ainda não tem conta?<p>
@@ -35,7 +35,7 @@ export default () => {
   container.innerHTML = template;
   const btnLogin = container.querySelector('.btn-feed');
   btnLogin.addEventListener('click', () => {
-    window.location.hash = '#register';
+    window.location.hash = '#feed';
   });
   return container;
 };

@@ -11,10 +11,10 @@ export default () => {
           que esta rede pode oferecer!</p>
         </div>
       <div class='img-register'>
-        <img src='./img/logo2.png' alt='logo2' class='logo2'>
+        <img src='./img/logo2.png' alt='img-cadastro' class='img-cadastro'>
       </div>
     </div>
-    <section class='box-register'>
+    <section class='box-register'> 
     <form class='section-register'>
       <h2 class='subtitle-register'>CADASTRAR</h2>
       <input type='text' placeholder='Nome Completo:' id='name'>
@@ -22,6 +22,10 @@ export default () => {
       <input type='email' placeholder='E-mail:' id='e-mail'>
       <input type='password' placeholder='Senha:' id='password'> 
       <hr>
+      <p class='text-box-register'>Acesse com o Google<p>
+      <div class='logo-google'>
+      <img class='google-img' src='./img/googlelogo.png' alt='logo-google'>
+      </div>
       <button class='btn-cadastro' id='cadastro type='button>CADASTRE-SE</button>
     </form>
     </section>
@@ -32,7 +36,7 @@ export default () => {
 
   const btnCadastrar = container.querySelector('.btn-cadastro');
   btnCadastrar.addEventListener('click', () => {
-    window.location.hash = '#feed';
+    window.location.hash = '#login';
   });
   return container;
 };

@@ -1,5 +1,5 @@
-import feed from './lib/feed/index.js';
 import login from './lib/login/index.js';
+import feed from './lib/feed/index.js';
 import register from './lib/register/index.js';
 
 const main = document.querySelector('#root');
