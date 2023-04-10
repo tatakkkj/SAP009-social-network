@@ -4,6 +4,7 @@ export default () => {
   const template = `
     <header id='homeheader'>
       <h2>Petzone</h2>
+      <button class='signout'>Sair</button>
     </header>
     <main>
       <select>
@@ -22,6 +23,11 @@ export default () => {
     `;
 
   container.innerHTML = template;
+
+  const singout = container.querySelector('.singout');
+  singout.addEventListener('click', () => {
+    window.location.hash = '#login';
+  });
 
   return container;
 };
