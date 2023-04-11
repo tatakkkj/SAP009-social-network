@@ -11,7 +11,6 @@ export default () => {
     <div class='img-register'>
     <img src='./img/logo2.png' alt='logo2' width="auto" height="auto">
     </div>
-    </div>
     <section class='box-register'>
     <form class='section-register'>
       <h2 class='subtitle-register'>LOGIN</h2>
@@ -29,13 +28,12 @@ export default () => {
       </div>
     </form> 
     </section>
-    </section>  
     `;
 
   container.innerHTML = template;
   const btnLogin = container.querySelector('.btn-feed');
   btnLogin.addEventListener('click', () => {
-    window.location.hash = '#feed';
+    window.location.hash = 'login';
   });
   return container;
 };

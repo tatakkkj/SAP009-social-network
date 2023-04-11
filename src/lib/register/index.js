@@ -5,11 +5,6 @@ export default () => {
     <section class='box-text-img'>
     <div class='box-01'>
         <h1 class="logo-geral logo-register">PetZone</h1>
-        <div class="paragrafo">
-          <p><strong>Primeira vez por aqui?</strong></p>
-          <p>Realize o seu cadastro, contribua e aproveite todas as possibilidades
-          que esta rede pode oferecer!</p>
-        </div>
       <div class='img-register'>
         <img src='./img/logo2.png' alt='img-cadastro' class='img-cadastro'>
       </div>
