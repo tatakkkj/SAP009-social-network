@@ -1,5 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
+} from 'firebase/auth';
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
@@ -17,30 +19,6 @@ const app = initializeApp(firebaseConfig);
 // Iniciar authentication
 const auth = getAuth(app);
 
-export const signUp = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      return user;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      return [errorCode, errorMessage];
-    });
-};
+export const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
-export const signIn = (email, password) => {
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      return user;
-    })
-
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      return [errorCode, errorMessage];
-    });
-};
+export const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);

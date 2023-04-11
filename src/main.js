@@ -1,3 +1,4 @@
+// Este es el punto de entrada de tu aplicacion
 import login from './lib/login/index.js';
 import feed from './lib/feed/index.js';
 import register from './lib/register/index.js';
@@ -10,11 +11,11 @@ const verifyHash = () => {
     case '#login':
       main.appendChild(login());
       break;
-    case '#register':
-      main.appendChild(register());
-      break;
     case '#feed':
       main.appendChild(feed());
+      break;
+    case '#register':
+      main.appendChild(register());
       break;
     default:
       main.appendChild(login());
