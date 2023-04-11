@@ -1,3 +1,5 @@
+import { signIn } from '../firebase';
+
 export default () => {
   const container = document.createElement('div');
   const template = `
@@ -35,9 +37,17 @@ export default () => {
   });
 
   function login(e) {
-    console.log("entrou");
     e.preventDefault();
-    signIn(email.value, password.value);
+
+    const usuario = signIn(email.value, password.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        return [errorCode, errorMessage];
+      });
+    console.log(usuario);
   }
 
   loginButton.addEventListener('click', login);
