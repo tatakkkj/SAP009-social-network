@@ -6,15 +6,15 @@ export default () => {
 
   const template = `
   <div class='container__signup__info'>
-    <h1 class='container__signup__info__title'>Petzone</h1>
+    <img class='container__signup__info__logo' src='./lib/assets/logo1.png' alt='logo' />
+    <h2 class='container__signup__info__subtitle'>Você está mais perto de poder ajudar a causa que acredita.</h2> 
     <h2 class='container__signup__info__subtitle'>Registre-se</h2> 
   </div>
-  <form class='container__singup__form'>
-    <input type='text' class='container__singup__form__input' id='name' placeholder='Nome' />
-    <input type='text' class='container__singup__form__input' id='surname' placeholder='Sobrenome' />
-    <input type='text' class='container__singup__form__input' id='username' placeholder='Usuário' />
+  <form class='container__signup__form'>
+    <input type='text' class='container__signup__form__input' id='name' placeholder='Nome' />
     <input type='email' class='container__signup__form__input' id='email' placeholder='Email' />
     <input type='password' class='container__signup__form__input' id='password' placeholder='Senha' />
+    <p id='error-message-register'></p>
     <button class='container__signup__form__button' id='signupbutton'>Registrar</button>
     <button class='container__signup__form__button' id='backtologin'>Voltar</button>
   </form>
@@ -22,26 +22,29 @@ export default () => {
 
   container.innerHTML = template;
 
-  const singUpButton = container.querySelector('#signupbutton');
-  singUpButton.addEventListner('click', () => {
-    const email = container.querySelector('#email');
-    const password = container.querySelector('#password');
-    const name = container.querySelector('#name');
-    const surname = container.querySelector('#surname');
-    const username = container.querySelector('#username');
+  const email = container.querySelector('#email');
+  const password = container.querySelector('#password');
+  const name = container.querySelector('#name');
+  const signUpButton = container.querySelector('#signupbutton');
+  const errorMessageRegister = container.querySelector('#error-message-register');
 
-    if (username.value === '' || name.value === '' || surname.value === '' || email.value === '' || password.value === '') {
-      alert('Por favor, preencha todos os campos');
+  function register(e) {
+    e.preventDefault();
+    if (name.value === '' || email.value === '' || password.value === '') {
+      errorMessageRegister.innerHTML = 'Por favor, preencha todos os campos';
     } else {
-      signUp(email.value, password.value, name.value, surname.value, username.value)
+      signUp(email.value, password.value, name.value)
         .then(() => {
           window.location.hash = '#login';
         })
         .catch((error) => {
-          console.error(error.message);
+          const errorCode = error.code;
+          const errorMessage = error.message;
         });
     }
-  });
+  }
+
+  signUpButton.addEventListener('click', register);
 
   const returnLogin = container.querySelector('#backtologin');
   returnLogin.addEventListener('click', () => {

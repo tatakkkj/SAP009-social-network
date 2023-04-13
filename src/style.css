@@ -1,38 +1,5 @@
 @import url("lib/login/login.css");
 @import url("lib/feed/feed.css");
+@import url("lib/register/style.css");
 @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #fbfafa;
-}
-
-.btn-geral {
-    background:  #360d6c;
-    border: none;
-    box-shadow: 2px 3px 2px rgba(0,0,0,0.25);
-    border-radius: 8px;
-    color: white;
-}
-
-.logo-geral {
-    background-color: #a26ff5;
-    border-radius: 8px;
-    color: white;
-    padding: 8px;
-}
-
-#feedheader{
-    background-color: #E3D3E6;
-}
-
-#feedfooter{
-    background-color: #E3D3E6;
-}
-

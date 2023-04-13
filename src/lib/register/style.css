@@ -7,7 +7,7 @@
     --first-font: 'Raleway', sans-serif;
 }
 
-#container__login { 
+#container__signup { 
     padding-top: 5%;
     display: flex;
     flex-direction: column;
@@ -15,27 +15,27 @@
     gap: 60px;
 }
 
-.container__login__info {
+.container__signup__info {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+}
+
+.container__signup__info__logo {
     max-width: 90%;
 }
 
-.container__login__info__logo {
-    max-width: 90%;
-}
-
-.container__login__info__subtitle {
+.container__signup__info__subtitle {
     font-family: monospace;
     font-size: 1rem;
     color: black;
+    max-width: 90%;
 }
 
-.container__login__form {
+.container__signup__form {
     background-color: var(--first-color);
     max-width: 90%;
     padding: 15% 10%;
@@ -46,7 +46,8 @@
     align-items: center;
 }
 
-.container__login__form__input {
+
+.container__signup__form__input {
     width: 211px;
     height: 36px;
     left: 74px;
@@ -56,16 +57,9 @@
     border-radius: 5px;
 }
 
-.container__login__form__button {
+.container__signup__form__button {
     font-size: 1rem;
     border-radius: 5px;
     margin: 2px 0px 2px 0px;
     width: 150px;
-}
-
-#google-button {
-    background-color: var(--second-color);
-    border-radius: 60%;
-    width: 15%;
-    padding: 1%;
 }
