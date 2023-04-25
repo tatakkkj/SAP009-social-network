@@ -12,9 +12,9 @@ import {
   getFirestore,
   collection,
   addDoc,
-  where,
   query,
-  getDocs,
+  orderBy,
+  onSnapshot,
   updateDoc,
   doc,
 } from 'firebase/firestore';
@@ -39,21 +39,40 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 // Iniciar firestore
-const data = getFirestore(app);
+const db = getFirestore(app);
 
-export const signUp = (email, password, name) => {
-  createUserWithEmailAndPassword(auth, email, password, name);
-};
+// eslint-disable-next-line max-len
+export const signUp = (email, password, name) => createUserWithEmailAndPassword(auth, email, password, name);
 
 export const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
 export const signInWithGoogle = () => signInWithPopup(auth, provider);
 
-export const mewPost = async (post, date, username, id) => addDoc(collection(data, 'posts'), {
-  username,
-  date,
-  post,
-  id,
-  likes: 0,
-  likesUsers: [],
-});
+export const newPost = async (textPost) => {
+  console.log(auth.currentUser)
+  const post = {
+    userid: auth.currentUser.uid,
+    username: auth.currentUser.displayName,
+    date: new Date(Date.now()),
+    post: textPost,
+    likes: [],
+  };
+
+  const docRef = await addDoc(collection(db, 'posts'), post);
+  post.id = docRef.id;
+
+  return post;
+};
+
+export const accessPost = async (exibirPost, clearPost) => {
+  const queryOrder = query(collection(db, 'posts'), orderBy('date', 'desc'));
+  onSnapshot(queryOrder, (querySnapshot) => {
+    clearPost();
+    querySnapshot.forEach((item) => {
+      const data = item.data();
+      data.id = item.id;
+      data.date = data.date.toDate().toLocaleDateString();
+      exibirPost(data);
+    });
+  });
+};
