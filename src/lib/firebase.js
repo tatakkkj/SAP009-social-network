@@ -41,9 +41,8 @@ const provider = new GoogleAuthProvider();
 // Iniciar firestore
 const data = getFirestore(app);
 
-export const signUp = (email, password, name) => {
-  createUserWithEmailAndPassword(auth, email, password, name);
-};
+// eslint-disable-next-line max-len
+export const signUp = (email, password, name) => createUserWithEmailAndPassword(auth, email, password, name);
 
 export const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
