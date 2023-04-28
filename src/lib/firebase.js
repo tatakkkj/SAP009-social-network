@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  updateProfile,
 } from 'firebase/auth';
 
 import {
@@ -17,6 +18,9 @@ import {
   onSnapshot,
   updateDoc,
   doc,
+  deleteDoc,
+  arrayUnion,
+  arrayRemove,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -33,7 +37,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Iniciar authentication
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 // Iniciar authentication com Google
 const provider = new GoogleAuthProvider();
@@ -42,7 +46,13 @@ const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
 // eslint-disable-next-line max-len
-export const signUp = (email, password, name) => createUserWithEmailAndPassword(auth, email, password, name);
+export const signUp = async (email, password, name) => {
+  await createUserWithEmailAndPassword(auth, email, password, name);
+
+  return updateProfile(auth.currentUser, {
+    displayName: name,
+  });
+};
 
 export const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
@@ -50,7 +60,7 @@ export const signInWithGoogle = () => signInWithPopup(auth, provider);
 
 export const newPost = async (textPost) => {
   const post = {
-    userid: auth.currentUser.uid,
+    userId: auth.currentUser.uid,
     username: auth.currentUser.displayName,
     date: new Date(Date.now()),
     post: textPost,
@@ -75,3 +85,19 @@ export const accessPost = async (exibirPost, clearPost) => {
     });
   });
 };
+
+export const editPost = async (postId, textArea) => {console.log(db) 
+  return updateDoc(doc(db, 'posts', postId), {
+  post: textArea,
+});
+}
+
+export const deletePost = async (postId) => deleteDoc(doc(db, 'posts', postId));
+
+export const likePost = async (postId, userId) => updateDoc(doc(db, 'posts', postId), {
+  likes: arrayUnion(userId),
+});
+
+export const dislikePost = async (postId, userId) => updateDoc(doc(db, 'posts', postId), {
+  likes: arrayRemove(userId),
+});
