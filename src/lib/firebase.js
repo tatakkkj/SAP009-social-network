@@ -49,7 +49,6 @@ export const signIn = (email, password) => signInWithEmailAndPassword(auth, emai
 export const signInWithGoogle = () => signInWithPopup(auth, provider);
 
 export const newPost = async (textPost) => {
-  console.log(auth.currentUser)
   const post = {
     userid: auth.currentUser.uid,
     username: auth.currentUser.displayName,
