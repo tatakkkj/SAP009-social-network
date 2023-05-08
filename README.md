@@ -2,6 +2,8 @@
 
 Terceiro projeto realizado para o Bootcamp da Laboratória. O objetivo consiste em uma rede social responsiva destinada a apoiadores da causa animal. O projeto permite a interação dos usuários através da criação de postagens, curtidas, edição e exclusão das mesmas. Os usuários acessam a aplicação através da criação de contas e login autenticados pelo Firebase. Todo o desenvolvimento foi realizado em SPA e Mobile First.
 
+[Acesse nosso site](https://social-network-add74.web.app/)
+
 <div align="center">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" style="height: 30px;"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" style="height: 30px;"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="height: 30px;"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase" style="height: 30px;"/> <img src="https://user-images.githubusercontent.com/120331438/236021868-a5521c68-5662-4e17-b255-6b6a61cfa4c6.png" alt="Figma" style="height: 30px;"/> <img src="https://user-images.githubusercontent.com/120331438/236022375-08a5db03-84a4-4faf-94b6-51525057f850.png" alt="VsCode" style="height: 30px;"/>
 </div>
