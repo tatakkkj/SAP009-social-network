@@ -45,20 +45,16 @@ A partir dos dados coletados, constatamos que:
 * Entre as sugestões dadas pelos usuários, prevalecem temas como adestramento, adoção responsável, denuncia a maus-tratos de animais, dicas de vivência, saúde e alimentação do animal.
 
 ## 3. Protótipo Baixa Fidelidade
-
 Desenvolveu-se protótipos de baixa fidelidade usando o Figma.
 
-![login-baixa-fidelidade](https://user-images.githubusercontent.com/120331438/236892061-56b6c992-aa57-476f-b551-6025742baf16.png)
-![cadastro-baixa-fidelidade](https://user-images.githubusercontent.com/120331438/236892277-4c481026-7531-45f1-92b3-f3d93e4d6842.png)
-![feedbaixa-fidelidade](https://user-images.githubusercontent.com/120331438/236892341-d00b7a38-18b4-4418-b0fe-d2fabdc25483.png)
-
+![login-baixa-fidelidade](https://user-images.githubusercontent.com/120331438/236898507-5fba7794-ca63-4899-8e7a-2873b21ea7df.png)
+![feedbaixa-fidelidade](https://user-images.githubusercontent.com/120331438/236898545-9dba8bec-24b2-47e4-b155-e95e56a9c33e.png)
 
 ## 4. Protótipo Alta Fidelidade
 
 Desenvolveu-se protótipos de alta fidelidade usando o Figma. Para isso, foi pensado em todas as interações das usuárias na aplicação, para que assim, pudessem ter autonima na utilização da mesma.
 
 ![login-alta-fidelidade](https://user-images.githubusercontent.com/120331438/236892410-3b9f77d2-93d4-4650-88aa-d597a3c6d8b6.png)
-![cadastro-alta-fidelidade](https://user-images.githubusercontent.com/120331438/236892449-87a52c08-f06e-4803-9308-5949ad2e8910.png)
 ![feed-alta-fidelidade](https://user-images.githubusercontent.com/120331438/236892480-4df632f9-3b65-4092-b316-0ff3b6f8deee.png)
 
 ## 5. Interface da Página
