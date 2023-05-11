@@ -61,6 +61,9 @@ Desenvolveu-se protótipos de alta fidelidade usando o Figma. Para isso, foi pen
 
 ## 5. Interface da Página
 
+![login](https://github.com/tatakkkj/SAP009-social-network/assets/120331438/7e17b0d5-a7d6-4957-8ff4-945291786918)
+![register](https://github.com/tatakkkj/SAP009-social-network/assets/120331438/d5f2596e-6ff4-4f73-af06-50d592ee9b25)
+![feed](https://github.com/tatakkkj/SAP009-social-network/assets/120331438/8d276e44-3b83-4cb2-9ddb-02996fe10b0e)
 
 
 ## 6. Teste de Usabilidade
